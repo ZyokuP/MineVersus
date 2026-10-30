@@ -276,7 +276,7 @@ public final class Partida {
     }
 
     /** Al final del todo (MONITOR) y solo si nadie canceló la muerte (por ejemplo un tótem). */
-    @SubscribeEvent(priority = EventPriority.MONITOR)
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void alMorir(LivingDeathEvent e) {
         if (!activa || !(e.getEntity() instanceof ServerPlayer p)) return;
         Miembro m = buscar(p.getUUID());
